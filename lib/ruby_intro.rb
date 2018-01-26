@@ -54,9 +54,25 @@ def max_2_sum arr
   
   return total
 end
+end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  if arr.count >= 2
+    
+    # start at the first element and check each next value
+    for i in 0..arr.count - 2 do
+      
+      # compare each element to the current element
+      for j in 1..arr.count - 1 do
+        if(arr[i] + arr[j] == n and i != j)
+          return true
+        end
+      end
+    end
+  end
+  
+  # false if array is empty, has 1 item, or none summed to n
+  return false
 end
 
 # Part 2
