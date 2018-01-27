@@ -78,15 +78,21 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, " + name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if s =~ /^[^aeiouAEIOU0-9#]/
+    return true
+  end
+  return false
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if s =~ /^(1|0)*(100|0)$/
+    return true
+  end
+  return false
 end
 
 # Part 3
