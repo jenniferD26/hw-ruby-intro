@@ -98,5 +98,26 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  
+  # ACSESSORS
+  attr_accessor :isbn
+  attr_accessor :price
+  
+  # CONSTRUCTOR
+  def initialize(isbn, price)
+    
+    # only set the isbn if a string is given
+    raise ArgumentError, "isbn must be a string" if !isbn.kind_of? String
+    raise ArgumentError, "isbn cannot be blank" if isbn.empty?
+    @isbn = isbn
+    
+    # only set the price if it's a floating point number
+    raise ArgumentError, "price must be larger than 0" if price <= 0
+    @price = price
+  end
+  
+  def price_as_string
+    return "$" + String(sprintf('%.2f', price))
+  end
 end
+
